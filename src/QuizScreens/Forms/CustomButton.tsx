@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   TouchableOpacity,
   Text,
@@ -17,6 +16,7 @@ interface CustomButtonProps extends TouchableOpacityProps {
   textStyle?: StyleProp<TextStyle>;
   onPress?: () => void;
   errors?: Record<string, any>;
+  borderColor?: string;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -24,11 +24,12 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   text,
   style,
   textStyle,
+  borderColor = "#CCCCCC",
   ...props
 }) => {
   return (
     <TouchableOpacity
-      style={[styles.button, style]}
+      style={[styles.button, style, { borderColor }]} // Apply borderColor
       onPress={onPress}
       {...props}
     >
@@ -47,7 +48,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginRight: 10,
     backgroundColor: "#FFFFFF",
-    borderColor: "#CCCCCC",
   },
   buttonText: {
     fontSize: 16,

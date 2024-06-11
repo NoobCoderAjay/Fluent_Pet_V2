@@ -11,6 +11,9 @@ import RootNavigator from "./src/navigation/navigators/RootNavigator";
 import { Provider } from "react-redux";
 import store from "./store";
 import { useAuth0, Auth0Provider } from "react-native-auth0";
+import Household from "./src/Home/HouseHold/Household";
+import HouseholdAdd from "./src/Home/HouseholdAdd";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
@@ -20,7 +23,11 @@ export default function App() {
     >
       <Provider store={store}>
         <FontLoader>
-          <RootNavigator />
+          <SafeAreaProvider>
+            {/* <RootNavigator authToken={null} /> */}
+            {/* <Household /> */}
+            <HouseholdAdd />
+          </SafeAreaProvider>
         </FontLoader>
       </Provider>
     </Auth0Provider>

@@ -68,10 +68,10 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.errors = action.payload;
     },
-    // switchEnvironment(state, action: PayloadAction<BackendEnvType>) {
-    //   state.backendEnv = action.payload;
-    //   // Update backendUrl or any other related properties as needed
-    // },
+    switchEnvironment(state, action: PayloadAction<BackendEnvType>) {
+      state.backendEnv = action.payload;
+      // Update backendUrl or any other related properties as needed
+    },
     setPushNotificationToken(state, action: PayloadAction<string>) {
       state.expoPushToken = action.payload;
     },
