@@ -52,7 +52,9 @@ const GoalScreen: React.FC = () => {
         className="p-5 bg-white"
       >
         <View>
-          <Text className="text-[#333333] text-2xl font-bold font-arizona-bold">
+          <Text
+            className={`text-[#333333] text-2xl font-bold font-[${FontArizona.BOLD}]`}
+          >
             Goals/Commitment
           </Text>
 

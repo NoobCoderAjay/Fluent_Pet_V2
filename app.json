@@ -19,7 +19,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.ajay_jadhav.fluent_pet"
+      "package": "com.fluentpet.mobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,9 +28,13 @@
       [
         "expo-font",
         {
-          "fonts": [
-            "./assets/fonts"
-          ]
+          "fonts": ["./assets/fonts"]
+        }
+      ],
+      [
+        "react-native-auth0",
+        {
+          "domain": "auth.fluent.pet"
         }
       ]
     ],

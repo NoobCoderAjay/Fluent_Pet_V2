@@ -22,7 +22,7 @@ import { parseErrors } from "../lib/utilities";
 
 import CustomButton from "./Forms/CustomButton";
 import { isEmpty } from "lodash";
-import { Screen } from "../navigation/constants";
+import { Navigator, Screen } from "../navigation/constants";
 
 const ProfileScreen: React.FC = () => {
   const [errors, setErrors] = useState({});
@@ -30,6 +30,9 @@ const ProfileScreen: React.FC = () => {
   const navigationFunction = useNavigation<NavigationProp<ParamListBase>>();
   const handleSwitchChange = (value: boolean) => {
     setSwitchValue(value);
+    navigationFunction.navigate(Navigator.HARDWARE, {
+      screen: Screen.BASE_SETUP_PERMISSIONS,
+    });
   };
   const navigateToNextScreen = () => {
     navigationFunction.navigate(Screen.INFORMATION_SCREEN);

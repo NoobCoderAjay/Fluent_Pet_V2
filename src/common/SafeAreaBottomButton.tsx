@@ -5,9 +5,10 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import Button, { ButtonProps } from "./Button";
 import { Body } from "./Text";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+
 import { parseErrors } from "../lib/utilities";
 import { Size } from "../theme/Size";
+import { Colors } from "../theme/Colors";
 
 interface Props extends ButtonProps {
   errors?: Record<string, any>;
