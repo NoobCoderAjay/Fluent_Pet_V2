@@ -13,7 +13,7 @@ import CustomButton from "./Forms/CustomButton";
 import { FontArizona } from "../common/Typography";
 import { Colors } from "../theme/Colors";
 import Checkbox from "expo-checkbox";
-import { Screen } from "../navigation/constants";
+import { Navigator, Screen } from "../navigation/constants";
 
 type Props = {};
 
@@ -26,6 +26,9 @@ const SetupFinish = (_props: Props) => {
   };
   const handleBackBtnPress = () => {
     navigation.navigate(Screen.TEST_SCREEN);
+  };
+  const handleNavigationClick = () => {
+    navigation.navigate(Navigator.TAB_NAV);
   };
 
   return (
@@ -77,6 +80,7 @@ const SetupFinish = (_props: Props) => {
         visible={isModalVisible}
         onClose={() => {
           toggleModal();
+          handleNavigationClick();
         }}
       />
     </>

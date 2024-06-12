@@ -23,11 +23,9 @@ export default function App() {
     >
       <Provider store={store}>
         <FontLoader>
-          <SafeAreaProvider>
-            {/* <RootNavigator authToken={null} /> */}
-            {/* <Household /> */}
-            <HouseholdAdd />
-          </SafeAreaProvider>
+          <RootNavigator authToken={null} />
+          {/* <Household /> */}
+          {/* <HouseholdAdd /> */}
         </FontLoader>
       </Provider>
     </Auth0Provider>

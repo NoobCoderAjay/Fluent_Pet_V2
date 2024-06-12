@@ -38,6 +38,20 @@ const ProfileScreen: React.FC = () => {
     navigationFunction.navigate(Screen.INFORMATION_SCREEN);
   };
 
+  const handleCancel = () => {
+    Alert.alert(
+      "Are you sure?",
+      "Do you want to cancel onboarding and go to homepage?",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Yes",
+          onPress: () => navigationFunction.navigate(Navigator.TAB_NAV),
+          style: "destructive",
+        },
+      ]
+    );
+  };
   return (
     <>
       <ScrollView
@@ -86,7 +100,7 @@ const ProfileScreen: React.FC = () => {
       </ScrollView>
 
       <View className="absolute bottom-5 flex-row justify-between px-5 bg-white">
-        <CustomButton text="Cancel" />
+        <CustomButton text="Cancel" onPress={handleCancel} />
         <CustomButton
           onPress={navigateToNextScreen}
           text="Next"

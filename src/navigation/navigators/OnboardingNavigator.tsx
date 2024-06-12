@@ -14,6 +14,7 @@ import TestScreen from "../../QuizScreens/TestScreen";
 import { Dimensions } from "react-native";
 import Header from "../../QuizScreens/Header/QuizeHeader";
 import { NavigationContainer } from "@react-navigation/native";
+import TabNavigator from "./TabNavigator";
 
 export type BetaStackParamList = {
   [Screen.PROFILE_SCREEN]: { id: number };
@@ -21,6 +22,7 @@ export type BetaStackParamList = {
   [Screen.GOAL_SCREEN]: undefined;
   [Screen.TEST_SCREEN]: undefined;
   [Screen.SETUP_SCREEN]: undefined;
+  [Navigator.TAB_NAV]: undefined;
 };
 
 const Stack = createStackNavigator<BetaStackParamList>();
@@ -70,6 +72,11 @@ const OnboardingNavigator = () => {
         options={{
           header: renderHeader("SetupFinish", 90),
         }}
+      />
+      <Stack.Screen
+        name={Navigator.TAB_NAV}
+        component={TabNavigator}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

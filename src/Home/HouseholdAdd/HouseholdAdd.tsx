@@ -139,10 +139,10 @@ const HouseholdAdd: React.FC<Props> = () => {
         label={`SAVE NEW ${formType.toUpperCase()}`}
         errors={errors}
       /> */}
-      <View className="absolute bottom-5 w-full">
+      <View className="absolute bottom-5 w-full px-4">
         <CustomButton
           text={`SAVE NEW ${formType.toUpperCase()}`}
-          className="bg-[#006271] ml-2.5 "
+          className="bg-[#006271] ml-2.5"
           textStyle={[styles.bottomButtonText]}
         />
       </View>
