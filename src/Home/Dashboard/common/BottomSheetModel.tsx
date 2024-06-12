@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { RadioGroup } from "react-native-radio-buttons-group";
 //@ts-ignore
-import CrossMark from "../../assets/images/extraImages/CrossMark.png";
+import CrossMark from "../../../assets/images/extraImages/CrossMark.png";
 interface SnoozeBottomSheetModalProps {
   visible: boolean;
   onClose: () => void;

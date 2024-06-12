@@ -12,6 +12,7 @@ import {
   AuthenticationNavigator,
   AuthenticationStackParamList,
 } from "./AuthenticationNavigator";
+import { HomeNavigator } from "./HomeNavigator";
 
 export type RootStackParamList = {
   [Navigator.AUTHENTICATION]: NavigatorScreenParams<AuthenticationStackParamList>;
@@ -33,20 +34,9 @@ const RootNavigator: React.FC<Props> = ({ authToken }) => {
             component={AuthenticationNavigator}
           />
         ) : (
-          <Stack.Screen
-            name={Navigator.ONBOARDING_NAV}
-            component={OnboardingNavigator}
-          />
+          <Stack.Screen name={Navigator.HOME_NAV} component={HomeNavigator} />
         )} */}
-        {/* <Stack.Screen
-          name={Navigator.AUTHENTICATION}
-          component={AuthenticationNavigator}
-        /> */}
-        <Stack.Screen
-          name={Navigator.ONBOARDING_NAV}
-          component={OnboardingNavigator}
-        />
-        {/* <Stack.Screen name={Navigator.HARDWARE} component={HardWareNavigator} /> */}
+        <Stack.Screen name={Navigator.HOME_NAV} component={HomeNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -9,20 +9,20 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 //@ts-ignore
-import unassigned from "../assets/images/extraImages/unassigned.png";
+import unassigned from "../../assets/images/extraImages/unassigned.png";
 //@ts-ignore
-import Recent from "../assets/images/extraImages/Recent.png";
+import Recent from "../../assets/images/extraImages/Recent.png";
 //@ts-ignore
-import filter from "../assets/images/extraImages/filter.png";
+import filter from "../../assets/images/extraImages/filter.png";
 //@ts-ignore
-import ActivityAvatarOne from "../assets/images/extraImages/ActivityAvatarOne.png";
+import ActivityAvatarOne from "../../assets/images/extraImages/ActivityAvatarOne.png";
 //@ts-ignore
-import ActivityAvatarTwo from "../assets/images/extraImages/ActivityAvatarTwo.png";
+import ActivityAvatarTwo from "../../assets/images/extraImages/ActivityAvatarTwo.png";
 //@ts-ignore
-import Eat from "../assets/images/extraImages/Eat.png";
+import Eat from "../../assets/images/extraImages/Eat.png";
 //@ts-ignore
 
-import Treat from "../assets/images/extraImages/Treat.png";
+import Treat from "../../assets/images/extraImages/Treat.png";
 
 import {
   DrawerActions,
@@ -30,8 +30,8 @@ import {
   ParamListBase,
   useNavigation,
 } from "@react-navigation/native";
-import CustomBox from "./ActivityHeader/CustomBox";
 import SnoozeBottomSheetModal from "./common/BottomSheetModel";
+import CustomBox from "./common/CustomBox";
 
 type Props = {
   navigation: any;

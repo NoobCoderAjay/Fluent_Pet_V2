@@ -3,6 +3,13 @@ import React from "react";
 import AvatarTypeSpecific from "../../components/Avatar/AvatarTypeSpecific";
 import CustomButton from "../../QuizScreens/Forms/CustomButton";
 import { FontArizona } from "../../common/Typography";
+import {
+  NavigationProp,
+  ParamListBase,
+  useNavigation,
+} from "@react-navigation/native";
+import { Screen } from "../../navigation/constants";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 type Props = {};
 const Member = ({ name, role }: { name: string; role: string }) => (
@@ -28,6 +35,11 @@ const Member = ({ name, role }: { name: string; role: string }) => (
   </View>
 );
 const Household: React.FC<Props> = () => {
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+
+  const handleNavigation = () => {
+    navigation.navigate(Screen.HOUSEHOLD_ADD);
+  };
   return (
     <View className="p-5 bg-white h-full">
       <View className="flex-row px-3">
@@ -59,6 +71,7 @@ const Household: React.FC<Props> = () => {
           text="Add a Member"
           textStyle={{ color: "#333333" }}
           borderColor="#2B8996"
+          onPress={handleNavigation}
         />
       </View>
       <Member name="Floyd Miles" role="Teacher" />

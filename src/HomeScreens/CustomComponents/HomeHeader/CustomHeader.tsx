@@ -1,5 +1,5 @@
-import { Feather, Ionicons } from '@expo/vector-icons';
-import React, { useState } from 'react';
+import { Feather, Ionicons } from "@expo/vector-icons";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,9 +7,8 @@ import {
   TouchableOpacity,
   StatusBar,
   Dimensions,
-} from 'react-native';
-
-import { FontArizona } from 'src/components/common/Typography';
+} from "react-native";
+import { FontArizona } from "../../../common/Typography";
 
 interface HomeHeaderProps {
   onBackPress?: () => void;
@@ -25,19 +24,19 @@ const CustomHomeHeader: React.FC<HomeHeaderProps> = ({
   onBackPress,
   title,
   icon,
-  iconColor = '#006271',
-  titleColor = '#006271',
+  iconColor = "#006271",
+  titleColor = "#006271",
   notificationIconName,
   onPressDrawer,
 }) => {
   const handleIconPress = () => {
-    if (onPressDrawer && icon === 'menu') {
+    if (onPressDrawer && icon === "menu") {
       onPressDrawer();
     } else if (onBackPress) {
       onBackPress();
     }
   };
-  const [statusBarStyle] = useState<'dark-content'>('dark-content');
+  const [statusBarStyle] = useState<"dark-content">("dark-content");
   return (
     <View style={styles.container}>
       <StatusBar
@@ -77,41 +76,41 @@ const CustomHomeHeader: React.FC<HomeHeaderProps> = ({
 };
 
 export default CustomHomeHeader;
-const screenWidth = Dimensions.get('window').width;
-const screenHeight = Dimensions.get('window').height;
+const screenWidth = Dimensions.get("window").width;
+const screenHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
     paddingHorizontal: screenWidth * 0.05,
-    backgroundColor: '#F6FCFE',
+    backgroundColor: "#F6FCFE",
     height: screenHeight * 0.13,
   },
   leftHalf: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     top: 0,
     bottom: 0,
     width: screenWidth,
-    backgroundColor: '#E1F4FB',
-    transform: [{ skewY: '60deg' }],
+    backgroundColor: "#E1F4FB",
+    transform: [{ skewY: "60deg" }],
     marginLeft: screenWidth * 0.06,
   },
   rightHalf: {
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     top: 0,
     bottom: 0,
     width: screenWidth - screenWidth * 0.55,
-    backgroundColor: '#E1F4FB',
+    backgroundColor: "#E1F4FB",
   },
   titleContainer: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     zIndex: 1,
     marginBottom: screenHeight * 0.023,
     marginRight: screenWidth * 0.075,

@@ -11,6 +11,7 @@ import SetupConnection from "../../Hardware/SetupConnection";
 import { ConnectToBase } from "../../Hardware/ConnectToBase";
 import ConnectStepOne from "../../Hardware/ConnectStepOne";
 import ConnectStepThree from "../../Hardware/ConnectStepThree";
+import HardwareScreen from "../../Hardware/HardwareScreen";
 
 const Stack = createStackNavigator();
 
@@ -22,30 +23,8 @@ const HardWareNavigator = () => {
       }}
     >
       <Stack.Screen
-        name={Screen.CONNECTION_SETUP}
-        component={SetupConnection}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name={Screen.CONNECTION_SETUP_STEP_ONE}
-        component={ConnectStepOne}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name={Screen.CONNECTION_SETUP_STEP_TWO}
-        component={ConnectStepTwo}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name={Screen.CONNECTION_TO_BASE}
-        //@ts-ignore
-        component={ConnectToBase}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name={Screen.CONNECTION_SETUP_STEP_THREE}
-        //@ts-ignore
-        component={ConnectStepThree}
+        name={Screen.HARDWARE}
+        component={HardwareScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

@@ -1,22 +1,29 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ActivityScreen from "../../BottomScreens/ActivityScreen";
+
 import HardwareScreen from "../../Hardware/HardwareScreen";
 import Household from "../../Home/HouseHold/Household";
 import HomeScreen from "../../HomeScreens/HomeScreen";
 import ModuleScreen from "../../HomeScreens/ModuleScreens/ModuleScreen";
-import { Module } from "../../assets/icons";
+import {
+  Activity,
+  Bases,
+  HomeImage,
+  HouseHold,
+  Module,
+} from "../../assets/icons";
 import { Colors } from "../../theme/Colors";
-import HomeImage from "../../assets/icons/HomeImage";
-import Activity from "../../assets/icons/Activity";
-import Bases from "../../assets/icons/Bases";
-import HouseHold from "../../assets/icons/HouseHold";
+import ModuleNavigator from "./ModuleNavigator";
+import HardWareNavigator from "./HardwareNavigator";
+import HouseholdNavigator from "./HouseholdNavigator";
+import { LandingNavigator } from "./LandingNavigator";
+import { Navigator } from "../constants";
+import ActivityScreen from "../../Home/Dashboard/ActivityScreen";
 
 const Tab = createBottomTabNavigator();
 type Props = {};
 
-const TabNavigator = (props: Props) => {
+const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -31,9 +38,10 @@ const TabNavigator = (props: Props) => {
           borderTopLeftRadius: 15,
         },
       }}
+      initialRouteName={Navigator.ACTIVITY}
     >
       <Tab.Screen
-        name="Activity"
+        name={Navigator.ACTIVITY.replace("Nav", "")}
         //@ts-ignore
         component={ActivityScreen}
         options={{
@@ -42,8 +50,8 @@ const TabNavigator = (props: Props) => {
         }}
       />
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name={Navigator.LANDING_NAV.replace("Nav", "")}
+        component={LandingNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => <HomeImage color={Colors.WHITE} />,
@@ -51,24 +59,24 @@ const TabNavigator = (props: Props) => {
       />
 
       <Tab.Screen
-        name="Modules"
-        component={ModuleScreen}
+        name={Navigator.MODULE_NAV.replace("Nav", "")}
+        component={ModuleNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => <Module color={Colors.WHITE} />,
         }}
       />
       <Tab.Screen
-        name="Bases"
-        component={HardwareScreen}
+        name={Navigator.HARDWARE.replace("Nav", "")}
+        component={HardWareNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => <Bases color={Colors.WHITE} />,
         }}
       />
       <Tab.Screen
-        name="HouseHold"
-        component={Household}
+        name={Navigator.HOUSEHOLD.replace("Nav", "")}
+        component={HouseholdNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => <HouseHold color={Colors.WHITE} />,

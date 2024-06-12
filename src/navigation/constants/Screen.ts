@@ -55,6 +55,7 @@ export enum Screen {
   COURSE_SCREEN = "Course",
   LESSON_SCREEN = "LessonScreen",
 
+  HARDWARE = "Hardware",
   BASE_CONNECTION = "BaseConnection",
   CONNECTION_SETUP = "ConnectionSetup",
   CONNECTION_SETUP_STEP_ONE = "ConnectionSetupStepOne",

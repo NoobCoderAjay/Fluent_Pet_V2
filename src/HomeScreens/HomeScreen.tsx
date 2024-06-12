@@ -7,6 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Linking,
+  Dimensions,
 } from "react-native";
 
 //@ts-ignore
@@ -45,10 +46,11 @@ const HomeScreen = (_props: Props) => {
           <WelComeBox />
           <ProTipBox />
           <LearnerActivityBox />
-          {/* <View style={styles.LastImageContainer}>
+          <View style={styles.LastImageContainer}>
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate({ name: Navigator.BASE, merge: true })
+                // navigation.navigate({ name: Navigator.BASE, merge: true })
+                {}
               }
             >
               <Image source={Learner_Activity} />
@@ -56,7 +58,7 @@ const HomeScreen = (_props: Props) => {
             <TouchableOpacity onPress={handlePurchase}>
               <Image source={Buy} />
             </TouchableOpacity>
-          </View> */}
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -64,6 +66,8 @@ const HomeScreen = (_props: Props) => {
 };
 
 export default HomeScreen;
+const screenHeight = Dimensions.get("window").height;
+const paddingBottom = screenHeight * 0.08;
 
 const styles = StyleSheet.create({
   container: {
@@ -77,5 +81,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 15,
   },
-  scrollContainer: { paddingBottom: 100 },
+  scrollContainer: { paddingBottom: paddingBottom },
 });
